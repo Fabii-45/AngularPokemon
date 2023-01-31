@@ -1,5 +1,21 @@
 # PokedexApp
 
+App 9h tuto angular en autodidacte pour commencer la roadmap angular senior.
+Réalisation d'un pokedex de a à z avec notions de bases d'Angular.
+
+
+
+
+
+
+
+
+
+
+
+
+# Infos Angular
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
 
 ## Development server
