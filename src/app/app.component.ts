@@ -5,20 +5,30 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: ` <h1> Liste de Pokémons </h1> `
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
   
   pokemons:Pokemon[] = POKEMONS;
+  pokemonSelected: Pokemon|undefined;
 
   ngOnInit(): void {
     console.table(this.pokemons);
-    this.selectPokemon(this.pokemons[0])
   }
 
-  selectPokemon(pokemon: Pokemon){
+  selectPokemon(pokemonId: string){
     //BackTick pour éviter les concaténations comme en js 5
-    console.log(`Vous avez cliqué sur le pokémon ${pokemon.name}`)
+    //console.log(`Vous avez cliqué sur le pokémon ${pokemon.name}`)
+  
+    const pokemon: Pokemon|undefined = this.pokemons.find(pokemon => pokemon.id == +pokemonId);
+  
+    if(pokemon) {
+      console.log(`Vous avez demandé le pokémon ${pokemon.name}`);
+      this.pokemonSelected = pokemon;
+    } else {
+      console.log(`Vous avez demandé un pokémon qui n'existe pas`);
+      this.pokemonSelected = pokemon;
+    }
   }
 
   //Modifier template du composant pour afficher simplement le message Liste de Pokemons
